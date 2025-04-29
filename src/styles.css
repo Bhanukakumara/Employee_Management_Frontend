@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    font-family: "Jost", serif;
+  }
+  :root {
+    --bg-color: #ffffff;
+    --main-color: #4b9e22;
+    --text-color: #000000;
+    --other-color: #83868c;
+    --second-color: #d9d9d9;
+  
+    --h1-font: 5.5rem;
+    --h2-font: 2.8rem;
+    --p-font: 1.1rem;
+  }
+  body {
+    background: var(--bg-color);
+    color: var(--text-color);
+  }
+  section {
+    padding: 80px 10% 80px;
+  }
