@@ -12,18 +12,15 @@
         </tr>
     </thead>
     <tbody>
-        <!-- Example row, should be replaced dynamically using a backend template engine or JS -->
-        <tr>
-            <td>John Doe</td>
-            <td>john.doeexample.com</td>
-            <td>IT</td>
-            <td>2024-05-01 10:00</td>
-            <td>2024-05-01 10:00</td>
+        <tr *ngFor="let emp of employees">
+            <td>{{ emp.name }}</td>
+            <td>{{ emp.email }}</td>
+            <td>{{ emp.department }}</td>
+            <td>{{ emp.createdAt }}</td>
+            <td>{{ emp.updatedAt }}</td>
             <td>
-                <a href="/update-employee?id=1" class="btn btn-update">Update</a>
-                <a href="/delete-employee?id=1" class="btn btn-delete" onclick="return confirm('Are you sure you want to delete this employee?');">Delete</a>
+              <button (click)="deleteEmployee(emp.id!)">Delete</button>
             </td>
-        </tr>
-        <!-- Repeat rows as needed -->
+          </tr>
     </tbody>
 </table>
