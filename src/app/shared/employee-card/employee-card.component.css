@@ -1,0 +1,43 @@
+.employee-card-content {
+    display: flex;
+    
+    .employee-image {
+      flex: 0 0 100px;
+      margin-right: 1rem;
+      
+      img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 3px solid #f8f9fc;
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+      }
+    }
+    
+    .employee-info {
+      flex: 1;
+      
+      p {
+        margin-bottom: 0.5rem;
+      }
+      
+      .badge {
+        padding: 0.4em 0.6em;
+        font-size: 75%;
+      }
+      
+      .badge-success {
+        background-color: #1cc88a;
+      }
+      
+      .badge-warning {
+        background-color: #f6c23e;
+        color: #fff;
+      }
+      
+      .badge-danger {
+        background-color: #e74a3b;
+      }
+    }
+  }
