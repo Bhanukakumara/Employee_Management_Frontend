@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './add-new-form.component.css'
 })
 export class AddNewFormComponent {
-
+  addEmployee(){
+    
+  }
 }

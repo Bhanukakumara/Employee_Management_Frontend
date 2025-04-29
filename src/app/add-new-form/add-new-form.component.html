@@ -1,6 +1,6 @@
 <div class="form-container">
     <h2>Add New Employee</h2>
-    <form action="/add-employee" method="post">
+    <form>
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required />
 
@@ -15,6 +15,6 @@
             <option value="FINANCE">Finance</option>
             <option value="SALES">Sales</option>
         </select>
-        <button type="submit">Add Employee</button>
+        <button type="submit" (click)="addEmployee()">Add Employee</button>
     </form>
 </div>
