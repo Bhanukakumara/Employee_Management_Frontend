@@ -15,23 +15,9 @@ export interface Employee {
   providedIn: 'root'
 })
 export class EmployeeService {
-  private apiUrl = 'http://localhost:8080/api/employees';
-
   constructor(private http: HttpClient) {}
 
-  getEmployees(): Observable<Employee[]> {
-    return this.http.get<Employee[]>(this.apiUrl);
-  }
-
-  addEmployee(employee: Employee): Observable<Employee> {
-    return this.http.post<Employee>(this.apiUrl, employee);
-  }
-
-  updateEmployee(id: number, employee: Employee): Observable<Employee> {
-    return this.http.put<Employee>(`${this.apiUrl}/${id}`, employee);
-  }
-
-  deleteEmployee(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`);
-  }
+  getEmployees() { return this.http.get<Employee[]>('/api/employees'); }
+  addEmployee(employee: Employee) { return this.http.post('/api/employees', employee); }
+  deleteEmployee(id: number) { return this.http.delete(`/api/employees/${id}`); }
 }

@@ -1,4 +1,4 @@
-import { Component, NgModule, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { EmployeeService, Employee } from '../employee.service';
 import { NgFor } from '@angular/common';
 
