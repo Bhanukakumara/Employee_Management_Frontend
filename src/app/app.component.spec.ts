@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'Employee_Management_Frontend' title`, () => {
+  it(`should have the 'mos_burgers_frontend' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Employee_Management_Frontend');
+    expect(app.title).toEqual('mos_burgers_frontend');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, Employee_Management_Frontend');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, mos_burgers_frontend');
   });
 });
