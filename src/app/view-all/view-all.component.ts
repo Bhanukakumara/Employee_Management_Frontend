@@ -1,29 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService, Employee } from '../employee.service';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-view-all',
-  imports: [NgFor],
+  imports: [NgFor, NgIf],
   templateUrl: './view-all.component.html',
-  styleUrl: './view-all.component.css'
+  styleUrls: ['./view-all.component.css']
 })
 export class ViewAllComponent implements OnInit {
   employees: Employee[] = [];
+  isLoading = true;
+  error: string | null = null;
 
   constructor(private employeeService: EmployeeService) {}
 
-  ngOnInit(): void {
-    this.employeeService.getEmployees().subscribe(data => {
-      this.employees = data;
+  ngOnInit() {
+    this.employeeService.getEmployees().subscribe({
+      next: (data) => {
+        this.employees = data;
+        this.isLoading = false;
+      },
+      error: (err) => {
+        this.error = 'Failed to load employees';
+        this.isLoading = false;
+      }
     });
-  }
-
-  deleteEmployee(id: number): void {
-    if (confirm("Are you sure?")) {
-      this.employeeService.deleteEmployee(id).subscribe(() => {
-        this.employees = this.employees.filter(e => e.id !== id);
-      });
-    }
   }
 }
